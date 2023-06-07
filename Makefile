@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:13:47 by ecaruso           #+#    #+#              #
-#    Updated: 2023/06/07 18:19:53 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/06/07 19:01:18 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = push_swap
 PRINTF = ft_printf/libftprintf.a
 LIBFT = libft/libft.a
 SRC = \
-main.c
+main.c \
+stack_init.c
 
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror

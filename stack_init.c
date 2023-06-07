@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/07 19:00:15 by ecaruso          ###   ########.fr       */
+/*   Created: 2023/06/07 18:54:01 by ecaruso           #+#    #+#             */
+/*   Updated: 2023/06/07 19:03:48 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "./ft_printf/ft_printf.h"
-# include "./libft/libft.h"
-
-typedef struct s_stack
+void	stack_init(t_stack **a, char **argv)
 {
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}				t_stack;
+	a = NULL;
+	int i = 0;
 
-int		main(int argc, char **argv);
-void	stack_init(t_stack **a, char **argv);
-
-#endif
+	while (argv[i])
+	{
+		ft_printf("%s", argv[i]);
+		i++;
+	}
+}

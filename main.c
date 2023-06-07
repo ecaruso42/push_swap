@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:39:04 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/07 18:41:38 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/07 18:58:49 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int	main(int argc, char **argv)
 		return (1);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
-	push_swap(argv);
+	if (argc > 2)
+		stack_init(&a, argv + 1);
+	else if (argc == 2)
+		stack_init(&a, argv);
 	return (0);
 }
