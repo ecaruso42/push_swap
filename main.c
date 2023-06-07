@@ -6,11 +6,12 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:39:04 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/07 16:57:24 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/07 18:41:38 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -23,11 +24,6 @@ int	main(int argc, char **argv)
 		return (1);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
-	//push_swap(argv);
-	while (!argv)
-	{
-		ft_printf("%d", argv);
-		argv++;
-	}
+	push_swap(argv);
 	return (0);
-	}
+}

@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/07 17:02:44 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/07 18:42:48 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 typedef struct s_stack
 {
-	struct s_stack *next;
-	struct s_stack *prev;
-}			t_stack;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}				t_stack;
 
 int	main(int argc, char **argv);
 
