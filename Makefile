@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:13:47 by ecaruso           #+#    #+#              #
-#    Updated: 2023/06/07 19:01:18 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/06/10 20:14:19 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ PRINTF = ft_printf/libftprintf.a
 LIBFT = libft/libft.a
 SRC = \
 main.c \
-stack_init.c
+stack_init.c \
+utils.c
 
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror

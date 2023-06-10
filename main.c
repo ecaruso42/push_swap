@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:39:04 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/07 18:58:49 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/10 19:59:22 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
 	a = NULL;
 	b = NULL;
@@ -28,5 +28,10 @@ int	main(int argc, char **argv)
 		stack_init(&a, argv + 1);
 	else if (argc == 2)
 		stack_init(&a, argv);
+	while (argv != '\0')
+	{
+		free(argv);
+		argv++;
+	}
 	return (0);
 }
