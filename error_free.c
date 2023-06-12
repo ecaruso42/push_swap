@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 18:00:11 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/12 19:55:27 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/12 21:23:56 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	matrix_free(char **argv)
 {
-	while (*argv)
+	int i;
+
+	i = 0;
+	while (argv[i])
 	{
-		free(argv);
-		argv++;
+		free(argv[i]);
+		i++;
 	}
-	ft_printf("ERROR");
-	exit(1);
 }
 
 void	stack_free(t_stack_node **stack)
@@ -47,7 +48,6 @@ int	error_repetition(t_stack_node *a, int nbr)
 		return(0);
 	while (a)
 	{
-		ft_printf("check");
 		if (a->value == nbr)
 			return (1);
 		a = a->next;
