@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:39:04 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/10 19:59:22 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/12 19:29:12 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ int	main(int argc, char **argv)
 		stack_init(&a, argv + 1);
 	else if (argc == 2)
 		stack_init(&a, argv);
+	while (a)
+	{
+		ft_printf("check");
+		a = a->next;
+		ft_printf ("%d", a->value);
+	}
 	while (argv != '\0')
 	{
 		free(argv);

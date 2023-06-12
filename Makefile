@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:13:47 by ecaruso           #+#    #+#              #
-#    Updated: 2023/06/10 20:14:19 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/06/12 18:01:39 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ LIBFT = libft/libft.a
 SRC = \
 main.c \
 stack_init.c \
+error_free.c \
 utils.c
 
 OBJ = $(SRC:%.c=%.o)
