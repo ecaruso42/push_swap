@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:39:04 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/12 21:25:22 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/12 21:38:57 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,10 @@ int	main(int argc, char **argv)
 		stack_init(&a, argv);
 	while (a)
 	{
-		ft_printf("check");
-		a = a->next;
 		ft_printf ("%d", a->value);
+		a = a->next;
 	}
-	while (argv != '\0')
-	{
-		free(argv);
-		argv++;
-	}
+	matrix_free(argv);
+	stack_free(&a);
 	return (0);
 }

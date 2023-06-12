@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 18:54:01 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/12 19:53:02 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/12 21:33:06 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	stack_init(t_stack_node **a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		nbr = ft_atol(*argv);
+		nbr = ft_atol(argv[i]);
 		if (error_syntax(argv))
 		{
 			ft_printf("ERROR:\nsyntax not correct");
@@ -28,7 +28,7 @@ void	stack_init(t_stack_node **a, char **argv)
 		}
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			matrix_free(argv);
-		if (error_repetition(*a, (int)nbr))
+		if (error_repetition(*a, (int)nbr) == 1)
 		{
 			ft_printf("ERROR:\nnumber repetition");
 			matrix_free(argv);
