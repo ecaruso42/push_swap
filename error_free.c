@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 18:00:11 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/12 21:23:56 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/13 17:28:33 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	matrix_free(char **argv)
 		free(argv[i]);
 		i++;
 	}
+	exit (1);
 }
 
 void	stack_free(t_stack_node **stack)
@@ -42,15 +43,22 @@ void	stack_free(t_stack_node **stack)
 	exit (1);
 }
 
-int	error_repetition(t_stack_node *a, int nbr)
+int	error_repetition(char **argv)
 {
-	if (a == NULL)
-		return(0);
-	while (a)
+	long	i;
+	long	j;
+
+	i = 0;
+	while (argv[i])
 	{
-		if (a->value == nbr)
-			return (1);
-		a = a->next;
+		j = (i + 1);
+		while (argv [j])
+		{
+			if (strcmp(argv[i], argv[j]) == 0)
+				return (1);
+			j++;
+		}
+		i++;
 	}
 	return (0);
 }
@@ -66,7 +74,7 @@ int	error_syntax(char **argv)
 	{
 		while (argv[i][j])
 		{
-			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
+			if ((argv[i][j] >= '0' && argv[i][j] <= '9'))
 				return (1);
 			j++;
 		}

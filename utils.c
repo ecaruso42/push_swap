@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 16:50:09 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/12 18:01:17 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/13 17:22:14 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,14 @@ t_stack_node	*find_last_node(t_stack_node *head)
 	while (head->next)
 		head = head->next;
 	return (head);
+}
+
+int	strcmp(const char* str1, const char* str2)
+{
+	while (*str1 && (*str1 == *str2))
+	{
+		str1++;
+		str2++;
+	}
+	return *(unsigned char*)str1 - *(unsigned char*)str2;
 }

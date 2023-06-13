@@ -6,11 +6,12 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 18:54:01 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/12 21:33:06 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/13 18:52:09 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	stack_init(t_stack_node **a, char **argv)
 {
@@ -18,6 +19,13 @@ void	stack_init(t_stack_node **a, char **argv)
 	int		i;
 
 	i = 0;
+	if ((error_repetition(argv)) == 1)
+	{
+		ft_printf("ERROR:\nnumber repetition");
+		while (*argv)
+			printf("\n%p %s\n",*argv, *argv), ++argv;
+		exit (1);
+	}
 	while (argv[i])
 	{
 		nbr = ft_atol(argv[i]);
@@ -28,12 +36,6 @@ void	stack_init(t_stack_node **a, char **argv)
 		}
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			matrix_free(argv);
-		if (error_repetition(*a, (int)nbr) == 1)
-		{
-			ft_printf("ERROR:\nnumber repetition");
-			matrix_free(argv);
-			stack_free(a);
-		}
 		append_node(a, (int)nbr);
 		i++;
 	}
