@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:13:47 by ecaruso           #+#    #+#              #
-#    Updated: 2023/06/12 18:01:39 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/06/16 19:05:53 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRC = \
 main.c \
 stack_init.c \
 error_free.c \
-utils.c
+utils.c \
+split.c
 
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror

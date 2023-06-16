@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 18:00:11 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/16 18:52:50 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/16 19:02:04 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	error_syntax(char **argv)
 	{
 		while (argv[i][j])
 		{
-			if ((argv[i][j] >= '0' && argv[i][j] <= '9'))
+			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
 				return (1);
 			j++;
 		}
