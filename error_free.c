@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 18:00:11 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/16 17:37:04 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/16 18:52:50 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	matrix_free(char **argv)
 		free(argv[i]);
 		i++;
 	}
-	exit (1);
 }
 
 void	stack_free(t_stack_node **stack)
@@ -40,7 +39,6 @@ void	stack_free(t_stack_node **stack)
 		current = tmp;
 	}
 	*stack = NULL;
-	exit (1);
 }
 
 int	error_repetition(char **argv)
