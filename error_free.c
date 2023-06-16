@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 18:00:11 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/13 17:28:33 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/16 17:37:04 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,13 @@ int	error_syntax(char **argv)
 		i++;
 	}
 	return (0);
+}
+
+void	error_free(t_stack_node **a, char **argv, bool flag_argc_2)
+{
+	stack_free(a);
+	if (flag_argc_2)
+		matrix_free(argv);
+	ft_printf("Error\n");
+	exit(1);
 }

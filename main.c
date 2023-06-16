@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:39:04 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/13 18:42:33 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/16 17:26:44 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,9 @@ int	main(int argc, char **argv)
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	if (argc > 2)
-		stack_init(&a, argv + 1);
+		stack_init(&a, argv + 1, argc == 2);
 	else if (argc == 2)
-		stack_init(&a, argv);
-	while (a)
-	{
-		ft_printf ("%d", a->value);
-		a = a->next;
-	}
+		stack_init(&a, argv, argc == 2);
 	matrix_free(argv);
 	stack_free(&a);
 	return (0);

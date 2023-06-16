@@ -6,13 +6,14 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/13 17:22:06 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/16 17:37:15 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <stdbool.h>
 # include "./ft_printf/ft_printf.h"
 # include "./libft/libft.h"
 
@@ -25,8 +26,9 @@ typedef struct s_stack_node
 }				t_stack_node;
 
 int				main(int argc, char **argv);
-void			stack_init(t_stack_node **a, char **argv);
+void			stack_init(t_stack_node **a, char **argv, bool flag_argc_2);
 void			append_node(t_stack_node **stack, int nbr);
+void			error_free(t_stack_node **a, char **argv, bool flag_argc_2);
 int				error_syntax(char **argv);
 void			matrix_free(char **argv);
 int				error_repetition(char **argv);

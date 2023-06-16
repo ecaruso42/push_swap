@@ -6,39 +6,33 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 18:54:01 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/13 18:52:09 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/16 17:34:39 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	stack_init(t_stack_node **a, char **argv)
+void	stack_init(t_stack_node **a, char **argv, bool flag_argc_2)
 {
 	long	nbr;
 	int		i;
 
 	i = 0;
 	if ((error_repetition(argv)) == 1)
-	{
-		ft_printf("ERROR:\nnumber repetition");
-		while (*argv)
-			printf("\n%p %s\n",*argv, *argv), ++argv;
-		exit (1);
-	}
+		error_free(a, argv, flag_argc_2);
 	while (argv[i])
 	{
 		nbr = ft_atol(argv[i]);
 		if (error_syntax(argv))
-		{
-			ft_printf("ERROR:\nsyntax not correct");
-			matrix_free(argv);
-		}
+			error_free(a, argv, flag_argc_2);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-			matrix_free(argv);
+			error_free(a, argv, flag_argc_2);
 		append_node(a, (int)nbr);
 		i++;
 	}
+	if (flag_argc_2)
+		matrix_free(argv);
 }
 
 void	append_node(t_stack_node **stack, int nbr)
