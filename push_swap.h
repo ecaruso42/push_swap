@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/16 19:06:13 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/19 17:17:13 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int				main(int argc, char **argv);
 void			stack_init(t_stack_node **a, char **argv, bool flag_argc_2);
 void			append_node(t_stack_node **stack, int nbr);
 void			error_free(t_stack_node **a, char **argv, bool flag_argc_2);
-int				error_syntax(char **argv);
+int				error_syntax(char *argv);
 void			matrix_free(char **argv);
-int				error_repetition(char **argv);
+int				error_repetition(t_stack_node *a, int nbr);
 long			ft_atol(const char *str);
 t_stack_node	*find_last_node(t_stack_node *head);
 void			stack_free(t_stack_node **stack);

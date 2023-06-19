@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 18:00:11 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/16 19:02:04 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/19 17:17:07 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void	matrix_free(char **argv)
 {
 	int i;
 
-	i = 0;
+	i = -1;
+	if (argv == NULL || *argv == NULL)
+		return ;
 	while (argv[i])
 	{
-		free(argv[i]);
-		i++;
+		free(argv[i++]);
 	}
+	free(argv - 1);
 }
 
 void	stack_free(t_stack_node **stack)
@@ -41,42 +43,33 @@ void	stack_free(t_stack_node **stack)
 	*stack = NULL;
 }
 
-int	error_repetition(char **argv)
+int	error_repetition(t_stack_node *a, int nbr)
 {
-	long	i;
-	long	j;
-
-	i = 0;
-	while (argv[i])
+	if (NULL == a)
+		return (0);
+	while (a)
 	{
-		j = (i + 1);
-		while (argv [j])
-		{
-			if (strcmp(argv[i], argv[j]) == 0)
-				return (1);
-			j++;
-		}
-		i++;
+		if (a->value == nbr)
+			return (1);
+		a = a->next;
 	}
 	return (0);
 }
 
-int	error_syntax(char **argv)
+int	error_syntax(char *argv)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (argv[i])
+	if (!(*argv == '+'
+				|| *argv =='-'
+				|| (*argv >= '0' && *argv <= '9')))
+		return (1);
+	if ((*argv == '+'
+				|| *argv =='-')
+				&& !(argv[1] >= '0' && argv[1] <= '9'))
+		return (1);
+	while (*++argv)
 	{
-		while (argv[i][j])
-		{
-			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
-				return (1);
-			j++;
-		}
-		i++;
+		if (!(*argv >= '0' && *argv <= '9'))
+			return (1);
 	}
 	return (0);
 }
