@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:13:47 by ecaruso           #+#    #+#              #
-#    Updated: 2023/06/16 19:05:53 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/06/19 19:11:21 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ main.c \
 stack_init.c \
 error_free.c \
 utils.c \
-split.c
+split.c \
+tiny_sort.c \
+swap_command.c
 
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror

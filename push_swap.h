@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/19 18:05:50 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/19 19:08:12 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int				error_repetition(t_stack_node *a, int nbr);
 long			ft_atol(const char *str);
 t_stack_node	*find_last_node(t_stack_node *head);
 void			stack_free(t_stack_node **stack);
-int				strcmp(const char *str1, const char *str2);
 char			**ft_split_swap(char *str, char separator);
+bool			stack_sorted(t_stack_node *stack);
+int				stack_len(t_stack_node *stack);
 
 #endif

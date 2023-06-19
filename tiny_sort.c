@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   tiny_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 18:39:04 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/19 19:09:06 by ecaruso          ###   ########.fr       */
+/*   Created: 2023/06/19 18:58:37 by ecaruso           #+#    #+#             */
+/*   Updated: 2023/06/19 19:04:10 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+bool	stack_sorted(t_stack_node *stack)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
-
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	if(stack == NULL)
 		return (1);
-	else if (argc == 2)
-		argv = ft_split_swap(argv[1], ' ');
-	stack_init(&a, argv + 1, argc == 2);
-	if (!stack_sorted(a))
+	while (stack->next)
 	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
+		if (stack->value > stack->next->value)
+			return (false);
+		stack = stack->next;
 	}
-	stack_free(&a);
+	return (true);
 }
