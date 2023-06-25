@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 15:17:05 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 16:40:48 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/25 17:13:24 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ra(t_stack_node **a, bool checker)
 		ft_printf("ra\n");
 }
 
-void	rb(t_stack_node **a, bool checker)
+void	rb(t_stack_node **b, bool checker)
 {
 	rotate(b);
 	if (!checker)
