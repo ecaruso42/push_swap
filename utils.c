@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 16:50:09 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/19 19:07:45 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/25 19:03:36 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,24 @@ int	stack_len(t_stack_node *stack)
 		stack = stack->next;
 	}
 	return (count);
+}
+
+t_stack_node	*find_smallest(t_stack_node *stack)
+{
+	long			smallest;
+	t_stack_node	*smallest_node;
+
+	if (NULL == stack)
+		return (NULL);
+	smallest = LONG_MAX;
+	while (stack)
+	{
+		if (stack->value < smallest)
+		{
+			smallest = stack->value;
+			smallest_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (smallest_node);
 }

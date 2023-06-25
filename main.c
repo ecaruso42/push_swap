@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:39:04 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 14:53:47 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/25 17:29:41 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main(int argc, char **argv)
 			sa(&a, false);
 		else if (stack_len(a) == 3)
 			tiny_sort(&a);
+		else
+			push_swap(&a, &b);
 	}
 	stack_free(&a);
 }

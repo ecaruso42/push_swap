@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 17:14:41 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/25 19:09:15 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_stack_node
 {
 	int					value;
 	int					current_position;
+	bool				above_median;
+	struct s_stack_node *target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }				t_stack_node;
@@ -48,5 +50,7 @@ void			rra(t_stack_node **a, bool checker);
 void			rrb(t_stack_node **b, bool checker);
 void			rrr(t_stack_node **a, t_stack_node **b, bool checker);
 void			tiny_sort(t_stack_node **a);
+void			push_swap(t_stack_node **a, t_stack_node **b);
+t_stack_node	*find_smallest(t_stack_node *stack);
 
 #endif

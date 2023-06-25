@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:13:47 by ecaruso           #+#    #+#              #
-#    Updated: 2023/06/25 15:44:46 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/06/25 17:33:47 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ split.c \
 tiny_sort.c \
 swap_command.c \
 rotate_command.c \
-reverse_rotate.c
+reverse_rotate.c \
+push_swap.c
 
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror

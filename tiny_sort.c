@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:58:37 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 16:47:02 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/25 17:38:25 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,12 @@ void	tiny_sort(t_stack_node **a)
 		rra(a, false);
 	if ((*a)->value > (*a)->next->value)
 		sa(a, false);
+}
+
+void	handle_five(t_stack_node **a, t_stack_node **b)
+{
+	while (stack_len(*a) > 3)
+	{
+		init_nodes(*a, *b);
+	}
 }
