@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 15:17:05 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 15:37:25 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/25 16:40:48 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	ra(t_stack_node **a, bool checker)
 {
 	rotate(a);
 	if (!checker)
-		ft_printf("rb\n")
+		ft_printf("ra\n");
 }
 
 void	rb(t_stack_node **a, bool checker)
 {
 	rotate(b);
 	if (!checker)
-		ft_printf("rb\n")
+		ft_printf("rb\n");
 }
 
 void	rr(t_stack_node **a, t_stack_node **b, bool checker)
@@ -47,5 +47,5 @@ void	rr(t_stack_node **a, t_stack_node **b, bool checker)
 	rotate(a);
 	rotate(b);
 	if (!checker)
-		ft_printf("rr\n")
+		ft_printf("rr\n");
 }

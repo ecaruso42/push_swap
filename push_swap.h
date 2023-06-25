@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 15:38:51 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/25 16:43:38 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ void			ss(t_stack_node **a, t_stack_node **b, bool checker);
 void			ra(t_stack_node **a, bool checker);
 void			rb(t_stack_node **a, bool checker);
 void			rr(t_stack_node **a, t_stack_node **b, bool checker);
+void			rra(t_stack_node **a, bool checker);
+void			rrb(t_stack_node **b, bool checker);
+void			rrr(t_stack_node **b, bool checker);
 void			tiny_sort(t_stack_node **a);
 
 #endif
