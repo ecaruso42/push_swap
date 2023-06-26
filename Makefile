@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:13:47 by ecaruso           #+#    #+#              #
-#    Updated: 2023/06/26 16:51:23 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/06/26 17:10:29 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ push_command.c \
 swap_command.c \
 rotate_command.c \
 reverse_rotate.c \
+push_swap_init.c \
 push_swap_command.c
 
 OBJ = $(SRC:%.c=%.o)

@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/26 17:00:24 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/26 17:09:32 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdbool.h>
+# include <limits.h>
 # include "./ft_printf/ft_printf.h"
 # include "./libft/libft.h"
 
@@ -42,6 +43,8 @@ void			stack_free(t_stack_node **stack);
 char			**ft_split_swap(char *str, char separator);
 bool			stack_sorted(t_stack_node *stack);
 int				stack_len(t_stack_node *stack);
+void			pa(t_stack_node **a, t_stack_node **b, bool checker);
+void			pb(t_stack_node **b, t_stack_node **a, bool checker);
 void			sa(t_stack_node **a, bool checker);
 void			sb(t_stack_node **b, bool checker);
 void			ss(t_stack_node **a, t_stack_node **b, bool checker);
@@ -55,5 +58,8 @@ void			tiny_sort(t_stack_node **a);
 void			push_swap(t_stack_node **a, t_stack_node **b);
 t_stack_node	*find_smallest(t_stack_node *stack);
 void			init_nodes(t_stack_node *a, t_stack_node *b);
+void			handle_five(t_stack_node **a, t_stack_node **b);
+void			finish_rotation(t_stack_node **stack,
+				t_stack_node *top_node, char stack_name);
 
 #endif
