@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:58:37 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 17:38:25 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/26 16:42:05 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ void	handle_five(t_stack_node **a, t_stack_node **b)
 	while (stack_len(*a) > 3)
 	{
 		init_nodes(*a, *b);
+		finish_rotation(a, find_smallest(*a), 'a');
+		pb(b, a, false);
 	}
 }

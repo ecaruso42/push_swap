@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:39:42 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 19:07:55 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/26 16:27:55 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,51 @@ static void	set_target_node(t_stack_node *a, t_stack_node *b)
 	}
 }
 
+void	set_price(t_stack_node *a, t_stack_node *b)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = stack_len(a);
+	len_b = stack_len(b);
+	while(b)
+	{
+		b->push_price = b->current_position;
+		if (!(b->above_median))
+			b->push_price = len_b - (b->current_position);
+		if (b->target_node->above_median)
+			b->push_price += b->target_node->current_position;
+		else
+			b->push_price += len_a - (b->target_node->current_position);
+		b = b->next;
+	}
+}
+
+void	set_cheapest(t_stack_node *b)
+{
+	long			best_match_value;
+	t_stack_node	*best_match_node;
+
+	if (NULL == b)
+		return ;
+	best_match_value = LONG_MAX;
+	while (b)
+	{
+		if (b->push_price < best_match_value)
+		{
+			best_match_value = b->push_price;
+			best_match_node = b;
+		}
+		b = b->next;
+	}
+	best_match_node->cheapest = true;
+}
+
 void	init_nodes(t_stack_node *a, t_stack_node *b)
 {
 	set_current_position(a);
 	set_current_position(b);
 	set_target_node(a, b);
+	set_price(a, b);
+	set_cheapest(b);
 }
