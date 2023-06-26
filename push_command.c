@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:50:45 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/26 16:58:14 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/26 16:59:31 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	push(t_stack_node **dest, t_stack_node **src)
 {
 	t_stack_node	*node_to_push;
+
 	if (NULL == *src)
 		return ;
 	node_to_push = *src;

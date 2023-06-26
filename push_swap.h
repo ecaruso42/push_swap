@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/26 16:28:16 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/26 17:00:24 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack_node
 	int					push_price;
 	bool				above_median;
 	bool				cheapest;
-	struct s_stack_node *target_node;
+	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }				t_stack_node;

@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:39:42 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/26 16:27:55 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/26 17:01:48 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	set_current_position(t_stack_node *stack)
 	int	centerline;
 
 	i = 0;
-	if (NULL = stack)
+	if (NULL == stack)
 		return ;
 	centerline = stack_len(stack) / 2;
 	while (stack)
@@ -68,7 +68,7 @@ void	set_price(t_stack_node *a, t_stack_node *b)
 
 	len_a = stack_len(a);
 	len_b = stack_len(b);
-	while(b)
+	while (b)
 	{
 		b->push_price = b->current_position;
 		if (!(b->above_median))

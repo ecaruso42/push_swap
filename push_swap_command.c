@@ -6,13 +6,14 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:30:32 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/26 16:39:35 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/26 17:01:01 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+void	finish_rotation(t_stack_node **stack,
+	t_stack_node *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{
