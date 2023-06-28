@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:30:32 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/28 19:55:30 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/28 19:59:26 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	finish_rotation(t_stack_node **stack,
 	}
 }
 
-static void	move_nodes(t_stack_node **a, t_stack_node **b)
+void	move_nodes(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest_node;
 
@@ -74,7 +74,8 @@ static void	move_nodes(t_stack_node **a, t_stack_node **b)
 
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
-	int	len_a;
+	t_stack_node	*smallest;
+	int				len_a;
 
 	len_a = stack_len(*a);
 	if (len_a == 5)
