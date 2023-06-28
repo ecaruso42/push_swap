@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 16:50:09 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/25 19:03:36 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/28 19:38:16 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ t_stack_node	*find_last_node(t_stack_node *head)
 	while (head->next)
 		head = head->next;
 	return (head);
+}
+
+t_stack_node	*return_cheapest(t_stack_node *stack)
+{
+	if (NULL == stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }
 
 int	stack_len(t_stack_node *stack)

@@ -6,11 +6,33 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:30:32 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/26 17:01:01 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/28 19:53:10 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	rotate_both(t_stack_node **a,
+									t_stack_node **b,
+									t_stack_node *cheapest_node)
+{
+	while (*a != cheapest_node->target_node
+		&& *b != cheapest_node)
+		rr(a, b, false);
+	set_current_position(*a);
+	set_current_position(*b);
+}
+
+static void	reverse_rotate_both(t_stack_node **a,
+											t_stack_node **b,
+											t_stack_node *cheapest_node)
+{
+	while (*a != cheapest_node->target_node
+		&& *b != cheapest_node)
+		rrr(a, b, false);
+	set_current_position(*a);
+	set_current_position(*b);
+}
 
 void	finish_rotation(t_stack_node **stack,
 	t_stack_node *top_node, char stack_name)
@@ -34,6 +56,22 @@ void	finish_rotation(t_stack_node **stack,
 	}
 }
 
+static void	move_nodes(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node	*cheapest_node;
+
+	cheapest_node = return_cheapest(*b);
+	if (cheapest_node->above_median
+		&& cheapest_node->target_node->above_median)
+		rotate_both(a, b, cheapest_node);
+	else if (!(cheapest_node->above_median)
+		&& !(cheapest_node->target_node->above_median))
+		reverse_rotate_both(a, b, cheapest_node);
+	finish_rotation(b, cheapest_node, 'b');
+	finish_rotation(a, cheapest_node->target_node, 'a');
+	pa(a, b, false);
+}
+
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
 	int	len_a;
@@ -41,4 +79,15 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	len_a = stack_len(*a);
 	if (len_a == 5)
 		handle_five(a, b);
+	else
+	{
+		while (len_a-- > 3)
+			pb(b, a, false);
+	}
+	tiny_sort(a);
+	while (*b)
+	{
+		init_nodes(*a, *b);
+		move_nodes(a, b);
+	}
 }
