@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/28 19:57:39 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/28 21:38:08 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ t_stack_node	*find_smallest(t_stack_node *stack);
 void			init_nodes(t_stack_node *a, t_stack_node *b);
 void			handle_five(t_stack_node **a, t_stack_node **b);
 void			finish_rotation(t_stack_node **stack,
-				t_stack_node *top_node, char stack_name);
-void		move_nodes(t_stack_node **a, t_stack_node **b);
+					t_stack_node *top_node, char stack_name);
+void			move_nodes(t_stack_node **a, t_stack_node **b);
 t_stack_node	*return_cheapest(t_stack_node *stack);
 void			set_current_position(t_stack_node *stack);
 
