@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:30:32 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/28 19:53:10 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/06/28 19:55:30 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,12 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 		init_nodes(*a, *b);
 		move_nodes(a, b);
 	}
+	set_current_position(*a);
+	smallest = find_smallest(*a);
+	if (smallest->above_median)
+		while (*a != smallest)
+			ra(a, false);
+	else
+		while (*a != smallest)
+			rra(a, false);
 }
