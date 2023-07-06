@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:13:51 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/06/28 21:38:08 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/07/06 17:22:45 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdbool.h>
 # include <limits.h>
+# include <stdlib.h>
 # include "./ft_printf/ft_printf.h"
-# include "./libft/libft.h"
 
 typedef struct s_stack_node
 {
